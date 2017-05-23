@@ -1,5 +1,5 @@
 # vue-template-simple
-Get started working with Vue.sj without a build setup
+Get started working with Vue.js without a build setup
 
 ### 1. Clone this repository
 
