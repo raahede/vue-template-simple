@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <!-- Skeleton for simple, nice look -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <!-- Include Vue.js in dev mode -->
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <!-- Basic styling -->
+  <style type="text/css">
+    body {
+      text-align: center;
+    }
+
+    /* Hide element until the associated Vue instance finishes compilation */
+    [v-cloak] {
+      display: none;
+    }
+
+    /* Background blink effect */
+    .blink-bg {
+      transition: background 1s ease;
+    }
+    .blink .blink-bg {
+      background: #f3f300;
+      transition: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
+    <h1>Get started with Vue.js</h1>
+    <hr>
+
+    <!--
+      DOM element to render Vue.js app in
+      The content of the element will be used as template if
+      a template property is not added on the Vue instance
+      -->
+    <div id="app" v-cloak>
+      <h4>Total count: <span class="blink-bg">{{totalCount}}</span></h4>
+      <div class="row">
+        <!-- Rendering components -->
+        <counter v-for="counter in counters" :key="counter.id" v-bind:counter-data="counter"></counter>
+      </div>
+    </div>
+
+    <footer>
+      <hr>
+      <p><a class="button button-primary" href="https://github.com/raahede/vue-template-simple">Clone on Github</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Render component in the global scope.
+    // Components must be placed before
+    // the apps/vue instances that use them
+    Vue.component('counter', {
+      name: 'Counter',
+      template: `
+        <div class="four columns">
+          <label :for="counterData.id">{{counterData.text}}</label>
+          <input
+            :id="counterData.id"
+            class="u-full-width"
+            type="number"
+            v-model.number="counterData.count">
+        </div>
+      `,
+      props: ['counterData']
+    });
+
+    // Vue.js app
+    new Vue({
+      el: '#app',
+      name: 'App',
+      data: {
+        counters: [
+          {
+            id: 'counter1',
+            text: 'First counter',
+            count: 1
+          },
+          {
+            id: 'counter2',
+            text: 'Second counter',
+            count: 7
+          },
+          {
+            id: 'counter2',
+            text: 'Third counter',
+            count: 21
+          }
+        ]
+      },
+      // Computed properties are functions that return a live result
+      computed: {
+        totalCount: function() {
+          return this.counters.reduce(function (sum, item) { return sum + item.count; }, 0);
+        }
+      },
+      // Watchers can be added to any value (data, computed, prop)
+      watch: {
+        totalCount: function() {
+          var _self = this;
+          this.$el.className = 'blink';
+          setTimeout(function() {
+            _self.$el.className = '';
+          }, 50);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
