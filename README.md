@@ -5,6 +5,7 @@ Get started working with Vue.sj without a build setup
 
 ```zsh
 git clone https://github.com/raahede/vue-template-simple.git
+cd vue-template-simple
 ```
 
 ### 2. Run local server
@@ -13,6 +14,9 @@ You can open the `index.html` file in the browser, but then you can't use ajax r
 I recommend a module like [live-server](https://www.npmjs.com/package/live-server):
 
 ```zsh
-npm install -g live-server # install globally
-live-server # run server
+# install globally
+npm install -g live-server
+# run server
+live-server
 ```
+> You may need to run installation as admin `sudo npm install -g live-server`
