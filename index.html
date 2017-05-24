@@ -46,7 +46,7 @@
       <h4>Total count: <span class="blink-bg">{{totalCount}}</span></h4>
       <div class="row">
         <!-- Rendering components -->
-        <counter v-for="counter in counters" :key="counter.id" v-bind:counter-data="counter"></counter>
+        <counter v-for="counter in counters" v-bind:key="counter.id" v-bind:counter-data="counter"></counter>
       </div>
     </div>
 
@@ -64,9 +64,9 @@
       name: 'Counter',
       template: `
         <div class="four columns">
-          <label :for="counterData.id">{{counterData.text}}</label>
+          <label v-bind:for="counterData.id">{{counterData.text}}</label>
           <input
-            :id="counterData.id"
+            v-bind:id="counterData.id"
             class="u-full-width"
             type="number"
             v-model.number="counterData.count">
