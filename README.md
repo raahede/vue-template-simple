@@ -1,5 +1,5 @@
 # vue-template-simple
-Get started working with Vue.js without a build setup. 
+Get started working with Vue.js without a build setup. Check out the [demo page](https://raahede.github.io/vue-template-simple/).
 
 This boilerplate is based on Vue's own [simple boilerplate](https://github.com/vuejs-templates/simple), and is meant for simple proof-of-concept work, or getting familiar with Vue.js. For proper app development, I recommend a build setup. Have a look at [Vue's official templates](https://github.com/vuejs-templates).
 
