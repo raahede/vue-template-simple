@@ -12,7 +12,7 @@ cd vue-template-simple
 ```
 
 ### 2. Run local server
-You can open the `index.html` file in the browser, but then you can't use ajax requests in local development.
+Alternatively, you can simply open the `index.html` file in the browser, but then you can't use ajax requests in local development.
 
 I recommend a module like [live-server](https://www.npmjs.com/package/live-server):
 
