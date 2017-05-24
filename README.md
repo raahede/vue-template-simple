@@ -1,7 +1,8 @@
 # vue-template-simple
 Get started working with Vue.js without a build setup
 
-### 1. Clone this repository
+### 1. Clone or download this repository
+All you really need is the `index.html` file
 
 ```zsh
 git clone https://github.com/raahede/vue-template-simple.git
