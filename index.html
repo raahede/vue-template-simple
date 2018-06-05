@@ -103,7 +103,10 @@
       // Computed properties are functions that return a live result
       computed: {
         totalCount: function() {
-          return this.counters.reduce(function (sum, item) { return sum + item.count; }, 0);
+          return this.counters.reduce(function (sum, item) {
+            var val = item.count !== '' ? item.count : 0;
+            return sum + val;
+          }, 0);
         }
       },
       // Watchers can be added to any value (data, computed, prop)
